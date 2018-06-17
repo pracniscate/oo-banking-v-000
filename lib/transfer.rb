@@ -8,4 +8,9 @@ class Transfer
     @receiver = receiver
     @amount = amount
   end
+
+  def valid?
+    # check that both accounts are valid 
+    @sender.valid? && @receiver.valid? && @sender.balance > @amount
+  end
 end
